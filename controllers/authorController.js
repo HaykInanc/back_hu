@@ -15,9 +15,9 @@ class AuthorController {
     }
 
     async del(req, res) { 
-        const { id } = req.query; 
+        const { id } = req.body; 
         const cnt = await Author.destroy({ where: { id } }); 
-        return res.send({message: `${cnt} rows was deleted. `}) ;
+        return res.send({id, message: (cnt > 0)? 'OK' : 'ERR'}) ;
     }
 
     async getAll(req, res){

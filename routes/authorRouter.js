@@ -4,6 +4,6 @@ const {create, getAll, getOne, del} = require('../controllers/authorController')
 router.post('/add', create);
 router.get('/all', getAll);
 router.get('/one', getOne);
-router.get('/del', del);
+router.post('/del', del);
 
 module.exports = router
